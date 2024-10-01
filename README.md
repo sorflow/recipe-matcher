@@ -19,7 +19,7 @@
 
 1. Clone this repository.
    ```bash
-   git clone https://github.com/sorflow/RecipeMatcher.git
+   git clone https://github.com/sorflow/Recipe-Matcher.git
    ```
 2. Open the project in your favorite Java IDE (e.g., IntelliJ IDEA, Eclipse).
 3. Compile and run the `RecipeMatcher.java` file.
