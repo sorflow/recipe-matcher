@@ -1,6 +1,7 @@
-# RecipeMatcher
+# RM24 [ RecipeMatcher ]
 
-**RecipeMatcher** is a Java-based application that allows users to find recipes based on the ingredients they have on hand. The user selects ingredients from a predefined list, and the program identifies which recipes can be made with the selected ingredients. Additionally, the app suggests recipes that are missing only one ingredient.
+**RecipeMatcher** is a Java-based application that allows users to find recipes based on the ingredients they have on hand. The user selects ingredients from a predefined list, and the program identifies which recipes can be made with the selected ingredients. Additionally, the app suggests recipes that are missing only one ingredient. Much love to my professor from Google Inc. for giving me the idea for this application. He provides me much guidance and makes me want to be a better version of myself seeing his amazing work 
+ethic and how much he cares about his students. https://github.com/leejoon
 
 ## Features
 
