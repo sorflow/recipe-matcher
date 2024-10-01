@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.Font;
 import java.util.*;
 
 public class RecipeMatcher {
@@ -6,10 +7,29 @@ public class RecipeMatcher {
     private static final List<String> AVAILABLE_INGREDIENTS = initializeAvailableIngredients();
 
     public static void main(String[] args) {
+        // Set custom font for JOptionPane to Helvetica
+        UIManager.put("OptionPane.messageFont", new Font("Helvetica", Font.BOLD, 15));
+        UIManager.put("OptionPane.buttonFont", new Font("Helvetica", Font.BOLD, 15));
+
         List<String> userIngredients = getUserIngredients();
-        List<Recipe> cookableRecipes = findCookableRecipes(RECIPES, userIngredients);
-        printCookableRecipes(cookableRecipes);
-        printNearlyCompleteRecipes(RECIPES, userIngredients);
+
+        // Custom pop-up asking user if they want to proceed to see the recipes
+        int response = JOptionPane.showConfirmDialog(
+                null,
+                "Would you like to proceed to see the recipes?",
+                "Confirmation",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        // If user selects "Yes", show the cookable recipes, else exit
+        if (response == JOptionPane.YES_OPTION) {
+            List<Recipe> cookableRecipes = findCookableRecipes(RECIPES, userIngredients);
+            printCookableRecipes(cookableRecipes);
+            printNearlyCompleteRecipes(RECIPES, userIngredients);
+        } else {
+            JOptionPane.showMessageDialog(null, "Thank you! Exiting the program.", "Exit", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);  // Exiting the program
+        }
     }
 
     // Recipe class to hold recipe information
@@ -153,8 +173,6 @@ public class RecipeMatcher {
                         "Cook for another minute and serve"
                 )
         ));
-
-        // Add more recipes here...
 
         return recipes;
     }
